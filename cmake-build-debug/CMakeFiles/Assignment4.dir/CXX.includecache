@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/WorkD/CLionProjects/untitled/DSA/Assignment4/bet.h
+iostream
+-
+string
+-
+queue
+-
+stack
+-
+
+C:/Users/WorkD/CLionProjects/untitled/DSA/Assignment4/main.cpp
+iostream
+-
+string
+-
+bet.h
+C:/Users/WorkD/CLionProjects/untitled/DSA/Assignment4/bet.h
+
