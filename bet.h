@@ -10,6 +10,7 @@
 #include <list>
 #include <sstream>
 #include <stack>
+#include <queue>
 class BET {
 public:
 
@@ -27,6 +28,7 @@ public:
     size_t size();                                      // Return the number of nodes in the tree (using the private recursive function)
     size_t leaf_nodes();                                // Return the number of leaf nodes in the tree. (Use the private recursive function to help)
     bool empty();                                       // return true if the tree is empty. Return false otherwise.
+    void levelorder();
 
 
 
@@ -50,6 +52,7 @@ private:
     size_t size(BinaryNode *t);                         // return the number of nodes in the subtree pointed to by t.
     size_t leaf_nodes(BinaryNode *t);                   // return the number of leaf nodes in the subtree pointed to by t.
 
+
     //my helper functions
     void insert(BinaryNode *& t,BinaryNode* l =nullptr, BinaryNode*r = nullptr);
     BinaryNode * newBN(const std::string &e, BinaryNode* l = nullptr, BinaryNode * r= nullptr){ return new BinaryNode(e,l,r);}
@@ -59,7 +62,25 @@ private:
     int pres(const std::string& s);
 };
 
+    ///additional funcitons
+    void BET::levelorder () {
+        if(!empty()) {
+            std::queue<BinaryNode *> q;
+            q.push(root);
+            while (!q.empty()) {
+                auto n = q.front();
+                if(n->left != nullptr)
+                    q.push(n->left);
+                if(n->right != nullptr)
+                    q.push(n->right);
+                std::cout << n->element << ' ';
+                q.pop();
+            }
+            std::cout << "\n";
+        }
+    }
 
+    ///given functions to define
     BET::BET():root(nullptr) {}                          // default zero-parameter constructor. Builds an empty tree.
 
 

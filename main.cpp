@@ -39,6 +39,9 @@ int main() {
         bet3 = bet1;
         cout << "Testing assignment operator: ";
         bet3.printInfixExpression();
+
+        cout <<"Testing level order:" << endl;
+        bet3.levelorder();
     }
 
     cout << "Enter a postfix expression (or \"quit\" to quit): ";
@@ -58,6 +61,9 @@ int main() {
 
             cout << "Number of leaf nodes: ";
             cout << bet1.leaf_nodes() << endl;
+
+            cout <<"Testing level order:" << endl;
+            bet1.levelorder();
         }
         cout << "Enter a postfix expression (or \"quit\" to quit): ";
     }
